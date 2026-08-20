@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Remote Developer" as Developer
+actor "Engineering Manager" as Manager
+actor Jira
+
+rectangle "Remote Team Time-Tracking & Project Approver" {
+  usecase "Synchronize Jira Tasks" as UC_Sync
+  usecase "View Assigned Jira Tasks" as UC_View
+  usecase "Log Time Entry" as UC_Log
+  usecase "Validate Daily Hour Limit" as UC_Limit
+  usecase "Submit Timesheet" as UC_Submit
+  usecase "Validate Timesheet" as UC_Validate
+  usecase "Review Timesheet" as UC_Review
+  usecase "Approve Timesheet" as UC_Approve
+  usecase "Reject Timesheet" as UC_Reject
+  usecase "Notify Developer" as UC_Notify
+  usecase "View Budget Burn Dashboard" as UC_Budget
+  usecase "Send Budget Alert" as UC_Alert
+}
+
+Developer --> UC_View
+Developer --> UC_Log
+Developer --> UC_Submit
+Manager --> UC_Review
+Manager --> UC_Approve
+Manager --> UC_Reject
+Manager --> UC_Budget
+Jira --> UC_Sync
+
+UC_View ..> UC_Sync : <<include>>
+UC_Log ..> UC_Limit : <<include>>
+UC_Submit ..> UC_Validate : <<include>>
+UC_Approve ..> UC_Review : <<extend>>
+UC_Reject ..> UC_Review : <<extend>>
+UC_Approve ..> UC_Notify : <<include>>
+UC_Reject ..> UC_Notify : <<include>>
+UC_Alert ..> UC_Budget : <<extend>>\n[threshold crossed]
+@enduml
