@@ -1,6 +1,6 @@
 import random
 import pygame
-from game.block import Block
+from pes1ug24am234_lab1.lab_4.game.block import Block
 
 
 class GameEngine:

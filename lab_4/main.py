@@ -1,5 +1,5 @@
 import pygame
-from game.game_engine import GameEngine
+from pes1ug24am234_lab1.lab_4.game.game_engine import GameEngine
 
 WIDTH, HEIGHT = 480, 560
 FPS = 60
