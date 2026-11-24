@@ -20,11 +20,11 @@ MD5 and the OTP random generator addressed inappropriate security primitives.
 
 ## 3. How were the fixes checked?
 
-Before reports preserve the original Pylint and Flake8 findings. The cleaned
+Before reports preserve the original Pylint, Flake8 and Bandit findings. The cleaned
 source reaches 10.00/10 in Pylint and produces no Flake8 findings. Regression
 tests verify enrollment behavior and security boundaries instead of checking
-style alone. Bandit verification is completed by the report-generation command
-once its dependency is installed; a missing tool must not be reported as a pass.
+style alone. Bandit 1.9.4 measured six findings before the fixes and zero after
+them, with no skipped files or suppressed checks. All 15 regression tests pass.
 
 ## 4. What are the limitations and lessons?
 

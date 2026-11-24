@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "coverage",
+    "run",
+    "--source=visa_application",
+    "--branch",
+    "-m",
+    "pytest",
+    "CodeCoverageTest_visa_application.py",
+    "-q"
+  ],
+  "working_directory": "lab6",
+  "exit_code": 0,
+  "stdin": null,
+  "environment": {}
+}

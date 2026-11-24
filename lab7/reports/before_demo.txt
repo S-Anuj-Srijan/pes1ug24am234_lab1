@@ -1,0 +1,2 @@
+==== Running parse_application ====
+Enter visa type:entries (e.g. tourist:2): 

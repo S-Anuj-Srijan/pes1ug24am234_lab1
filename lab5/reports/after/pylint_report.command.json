@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "pylint",
+    "--persistent=n",
+    "course_enrollment_system.py"
+  ],
+  "working_directory": "lab5",
+  "exit_code": 0,
+  "stdin": null,
+  "environment": {}
+}

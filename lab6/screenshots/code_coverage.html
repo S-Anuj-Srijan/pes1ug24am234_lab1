@@ -1,0 +1,25 @@
+<!doctype html><meta charset="utf-8"><style>
+            *{box-sizing:border-box}body{margin:0;padding:32px;background:#f1f5f9;
+            color:#152338;font:18px Arial}h1{font-size:28px;margin:8px 0 12px}
+            p{margin:8px 0 20px}pre{background:#111827;color:#f1f5f9;padding:24px;
+            border-radius:8px;font:17px/1.5 Consolas,monospace;white-space:pre-wrap;
+            overflow-wrap:anywhere}footer{font-size:14px;color:#475569}</style>
+            <h1>Lab 6 - Code coverage</h1><p>S Anuj Srijan | PES1UG24AM234 | 24 November 2026</p>
+            <pre>Working directory: lab6
+&gt; python -m coverage run --source=visa_application -m pytest CodeCoverageTest_visa_application.py -q
+...........                                                              [100%]
+11 passed in 0.18s
+
+Exit code: 0
+
+Working directory: lab6
+&gt; python -m coverage report -m
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+visa_application.py      37      0   100%
+---------------------------------------------------
+TOTAL                    37      0   100%
+
+Exit code: 0
+</pre><footer>Recorded command output - browser report screenshot.
+            Actual stdout/stderr preserved in reports/; not a native terminal capture.</footer>

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "coverage",
+    "run",
+    "--source=visa_application",
+    "-m",
+    "pytest",
+    "baseline/test_visa_application.py",
+    "-q"
+  ],
+  "working_directory": "lab6",
+  "exit_code": 0,
+  "stdin": null,
+  "environment": {}
+}

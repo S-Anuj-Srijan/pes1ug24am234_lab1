@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "coverage",
+    "report",
+    "-m"
+  ],
+  "working_directory": "lab6",
+  "exit_code": 0,
+  "stdin": null,
+  "environment": {}
+}

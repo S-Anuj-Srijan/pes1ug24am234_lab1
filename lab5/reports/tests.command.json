@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "test_course_enrollment_system.py",
+    "-q"
+  ],
+  "working_directory": "lab5",
+  "exit_code": 0,
+  "stdin": null,
+  "environment": {}
+}

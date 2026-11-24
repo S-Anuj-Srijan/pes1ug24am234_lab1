@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "test_processor.py",
+    "-q",
+    "--tb=short"
+  ],
+  "working_directory": "lab7",
+  "exit_code": 0,
+  "stdin": null,
+  "environment": {
+    "LAB7_TARGET": "fixed"
+  }
+}

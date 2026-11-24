@@ -30,4 +30,17 @@ python scripts/verify_labs.py --lab 5
 
 The verification script runs all three tools against both versions and saves
 stdout, stderr and exit status separately. It does not execute the unsafe
-baseline. The final security report requires Bandit to be installed.
+baseline.
+
+## Measured results (24 November 2026)
+
+| Tool | Original | Fixed |
+|---|---:|---:|
+| Bandit 1.9.4 | 6 findings (2 high, 1 medium, 3 low) | 0 findings |
+| Pylint 4.1.4 | 4.17/10 | 10.00/10 |
+| Flake8 7.5.0 | Formatting findings | 0 findings |
+
+Bandit reports: [before](reports/before/bandit_report.txt) and
+[after](reports/after/bandit_report.txt). Neither scan skipped a file or used
+`nosec` suppressions. All **15 regression tests pass**. Command metadata and
+stderr are stored alongside each report.

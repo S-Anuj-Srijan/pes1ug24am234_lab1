@@ -1,0 +1,139 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+_______________________ test_parse_application_no_crash _______________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 33, in test_parse_application_no_crash
+  |     def test_parse_application_no_crash(value):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 34, in test_parse_application_no_crash
+    |     result = application.parse_application(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 2, in parse_application
+    |     visa, entries = text.split(':')
+    |                     ^^^^^^^^^^^^^^^
+    | TypeError: a bytes-like object is required, not 'str'
+    | Failing test case: test_parse_application_no_crash(
+    |     value=b'',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 34, in test_parse_application_no_crash
+    |     result = application.parse_application(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 2, in parse_application
+    |     visa, entries = text.split(':')
+    |     ^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_parse_application_no_crash(
+    |     value='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 34, in test_parse_application_no_crash
+    |     result = application.parse_application(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 2, in parse_application
+    |     visa, entries = text.split(':')
+    |                     ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_application_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+    +------------------------------------
+______________________ test_processing_average_no_crash _______________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 43, in test_processing_average_no_crash
+  |     def test_processing_average_no_crash(value):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 44, in test_processing_average_no_crash
+    |     result = application.processing_average(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 6, in processing_average
+    |     values = [int(r) for r in days_csv.split(',')]
+    |                               ^^^^^^^^^^^^^^^^^^^
+    | TypeError: a bytes-like object is required, not 'str'
+    | Failing test case: test_processing_average_no_crash(
+    |     value=b'',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 44, in test_processing_average_no_crash
+    |     result = application.processing_average(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 6, in processing_average
+    |     values = [int(r) for r in days_csv.split(',')]
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 6, in <listcomp>
+    |     values = [int(r) for r in days_csv.split(',')]
+    |               ^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing test case: test_processing_average_no_crash(
+    |     value='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 44, in test_processing_average_no_crash
+    |     result = application.processing_average(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 6, in processing_average
+    |     values = [int(r) for r in days_csv.split(',')]
+    |                               ^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_processing_average_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+    +------------------------------------
+__________________________ test_payable_fee_no_crash __________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 49, in test_payable_fee_no_crash
+  |     def test_payable_fee_no_crash(value):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 50, in test_payable_fee_no_crash
+    |     result = application.payable_fee(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 10, in payable_fee
+    |     fee, discount = text.split('|')
+    |                     ^^^^^^^^^^^^^^^
+    | TypeError: a bytes-like object is required, not 'str'
+    | Failing test case: test_payable_fee_no_crash(
+    |     value=b'',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 50, in test_payable_fee_no_crash
+    |     result = application.payable_fee(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 10, in payable_fee
+    |     fee, discount = text.split('|')
+    |     ^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_payable_fee_no_crash(
+    |     value='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\test_processor.py", line 50, in test_payable_fee_no_crash
+    |     result = application.payable_fee(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 10, in payable_fee
+    |     fee, discount = text.split('|')
+    |                     ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_payable_fee_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+    +------------------------------------
+=========================== short test summary info ===========================
+FAILED test_processor.py::test_parse_application_no_crash - ExceptionGroup: H...
+FAILED test_processor.py::test_processing_average_no_crash - ExceptionGroup: ...
+FAILED test_processor.py::test_payable_fee_no_crash - ExceptionGroup: Hypothe...
+3 failed, 30 deselected in 20.05s

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "coverage",
+    "json",
+    "-o",
+    "C:\\Users\\text2\\Desktop\\pes1ug24am234_lab1\\lab6\\reports\\baseline_branch\\coverage.json"
+  ],
+  "working_directory": "lab6",
+  "exit_code": 0,
+  "stdin": null,
+  "environment": {}
+}

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "baseline/visa_application.py"
+  ],
+  "working_directory": "lab7",
+  "exit_code": 1,
+  "stdin": "\n\n\n",
+  "environment": {}
+}

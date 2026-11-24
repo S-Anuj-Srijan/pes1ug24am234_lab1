@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "visa_application.py"
+  ],
+  "working_directory": "lab7",
+  "exit_code": 0,
+  "stdin": "tourist:2\n5,10,21\n6000|500\n",
+  "environment": {}
+}

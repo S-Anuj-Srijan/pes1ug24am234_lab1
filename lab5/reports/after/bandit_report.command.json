@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "bandit",
+    "-r",
+    "-f",
+    "txt",
+    "course_enrollment_system.py"
+  ],
+  "working_directory": "lab5",
+  "exit_code": 0,
+  "stdin": null,
+  "environment": {}
+}

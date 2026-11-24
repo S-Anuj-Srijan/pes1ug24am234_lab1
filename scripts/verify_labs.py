@@ -11,14 +11,20 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def run(args, cwd, destination, allowed=(0,)):
+def run(args, cwd, destination, allowed=(0,), input_text=None, extra_env=None):
     """Save a tool's output and metadata, then enforce expected exit codes."""
     env = os.environ.copy()
     env["PYTHONIOENCODING"] = "utf-8"
     env["PYTEST_DISABLE_PLUGIN_AUTOLOAD"] = "1"
+    temp_root = ROOT / ".pytest_tmp"
+    temp_root.mkdir(exist_ok=True)
+    env["PYTEST_DEBUG_TEMPROOT"] = str(temp_root)
+    if extra_env:
+        env.update(extra_env)
     result = subprocess.run(
         [sys.executable, *args], cwd=cwd, env=env,
         capture_output=True, text=True, encoding="utf-8", check=False,
+        input=input_text,
     )
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(result.stdout, encoding="utf-8")
@@ -29,6 +35,8 @@ def run(args, cwd, destination, allowed=(0,)):
         "command": ["python", *args],
         "working_directory": str(cwd.relative_to(ROOT)) or ".",
         "exit_code": result.returncode,
+        "stdin": input_text,
+        "environment": extra_env or {},
     }, indent=2), encoding="utf-8")
     print(result.stdout, end="")
     if result.returncode not in allowed:
@@ -82,15 +90,33 @@ def coverage_analysis():
                 raise RuntimeError("Branch coverage is below 90%")
 
 
+def fuzz_analysis():
+    cwd = ROOT / "lab7"
+    output = cwd / "reports"
+    run(["baseline/visa_application.py"], cwd, output / "before_demo.txt",
+        allowed=(1,), input_text="\n\n\n")
+    run(["-m", "pytest", "test_processor.py", "-k", "no_crash",
+         "-q", "--tb=short"], cwd, output / "before_fuzz.txt",
+        allowed=(1,), extra_env={"LAB7_TARGET": "baseline"})
+    run(["visa_application.py"], cwd, output / "after_invalid_demo.txt",
+        input_text="\n\n\n")
+    run(["visa_application.py"], cwd, output / "after_valid_demo.txt",
+        input_text="tourist:2\n5,10,21\n6000|500\n")
+    run(["-m", "pytest", "test_processor.py", "-q", "--tb=short"],
+        cwd, output / "after_fuzz.txt", extra_env={"LAB7_TARGET": "fixed"})
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--lab", choices=("5", "6", "all"), default="all")
+    parser.add_argument("--lab", choices=("5", "6", "7", "all"), default="all")
     args = parser.parse_args()
     dependencies = ["pytest"]
     if args.lab in ("5", "all"):
         dependencies += ["pylint", "bandit", "flake8"]
     if args.lab in ("6", "all"):
         dependencies.append("coverage")
+    if args.lab in ("7", "all"):
+        dependencies.append("hypothesis")
     missing = [name for name in dependencies
                if importlib.util.find_spec(name) is None]
     if missing:
@@ -100,6 +126,8 @@ def main():
         static_analysis()
     if args.lab in ("6", "all"):
         coverage_analysis()
+    if args.lab in ("7", "all"):
+        fuzz_analysis()
 
 
 if __name__ == "__main__":

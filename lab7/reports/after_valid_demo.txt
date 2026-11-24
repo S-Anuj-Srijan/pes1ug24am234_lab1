@@ -1,0 +1,6 @@
+==== Running parse_application ====
+Enter visa type:entries (e.g. tourist:2): Visa Type and Entries: ('Tourist', 2)
+==== Running processing_average ====
+Enter processing days as CSV (e.g. 5,10,21): Average Processing Days: 12
+==== Running payable_fee ====
+Enter fee|discount (e.g. 6000|500): Payable Fee: 6580.0

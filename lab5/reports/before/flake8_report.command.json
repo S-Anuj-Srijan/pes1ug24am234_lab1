@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "flake8",
+    "baseline/course_enrollment_system.py"
+  ],
+  "working_directory": "lab5",
+  "exit_code": 1,
+  "stdin": null,
+  "environment": {}
+}

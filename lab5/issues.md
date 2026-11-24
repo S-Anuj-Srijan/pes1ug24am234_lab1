@@ -3,8 +3,8 @@
 S Anuj Srijan | PES1UG24AM234 | Course Enrollment System
 
 Line numbers below refer to the preserved `baseline/course_enrollment_system.py`.
-Pylint and Flake8 findings were measured locally. Bandit rule IDs below identify
-the relevant checks; the Bandit run must confirm the final security results.
+Pylint, Flake8 and Bandit findings were measured locally. Bandit 1.9.4 confirmed
+all six security findings below; the fixed source has no Bandit findings.
 
 | Issue | Type / tool | Original line(s) | Description | Fix approach |
 |---|---|---|---|---|
@@ -24,6 +24,7 @@ the relevant checks; the Bandit run must confirm the final security results.
 ## Verification and interface changes
 
 - Pylint baseline: **4.17/10**; cleaned source: **10.00/10**.
+- Bandit baseline: **6 findings** (2 high, 1 medium, 3 low); fixed: **0**.
 - Final Flake8 scan: **no findings**, using its default 79-character limit.
 - Security regression tests check expression rejection, literal export filenames,
   secret redaction, secure OTP bounds and the SHA-256 result.

@@ -1,0 +1,47 @@
+<!doctype html><meta charset="utf-8"><style>
+            *{box-sizing:border-box}body{margin:0;padding:32px;background:#f1f5f9;
+            color:#152338;font:18px Arial}h1{font-size:28px;margin:8px 0 12px}
+            p{margin:8px 0 20px}pre{background:#111827;color:#f1f5f9;padding:24px;
+            border-radius:8px;font:17px/1.5 Consolas,monospace;white-space:pre-wrap;
+            overflow-wrap:anywhere}footer{font-size:14px;color:#475569}</style>
+            <h1>Lab 7 - Original application: fuzz failures</h1><p>S Anuj Srijan | PES1UG24AM234 | 24 November 2026</p>
+            <pre>[EXCERPT - full traceback: reports/before_fuzz.txt]
+Working directory: lab7
+Environment: {&#x27;LAB7_TARGET&#x27;: &#x27;baseline&#x27;}
+&gt; python -m pytest test_processor.py -k no_crash -q --tb=short
+FFF                                                                      [100%]
+    | Failing test case: test_parse_application_no_crash(
+    |     value=b&#x27;&#x27;,
+    | )
+    | Failing test case: test_parse_application_no_crash(
+    |     value=&#x27;&#x27;,
+    | )
+    | Failing test case: test_parse_application_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+    | Failing test case: test_processing_average_no_crash(
+    |     value=b&#x27;&#x27;,
+    | )
+    | Failing test case: test_processing_average_no_crash(
+    |     value=&#x27;&#x27;,
+    | )
+    | Failing test case: test_processing_average_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+    | Failing test case: test_payable_fee_no_crash(
+    |     value=b&#x27;&#x27;,
+    | )
+    | Failing test case: test_payable_fee_no_crash(
+    |     value=&#x27;&#x27;,
+    | )
+    | Failing test case: test_payable_fee_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+=========================== short test summary info ===========================
+FAILED test_processor.py::test_parse_application_no_crash - ExceptionGroup: H...
+FAILED test_processor.py::test_processing_average_no_crash - ExceptionGroup: ...
+FAILED test_processor.py::test_payable_fee_no_crash - ExceptionGroup: Hypothe...
+3 failed, 30 deselected in 20.05s
+
+Exit code: 1</pre><footer>Recorded command output - browser report screenshot.
+            Actual stdout/stderr preserved in reports/; not a native terminal capture.</footer>

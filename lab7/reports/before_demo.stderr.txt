@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 31, in <module>
+    main()
+  File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 17, in main
+    result = parse_application(user_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\text2\Desktop\pes1ug24am234_lab1\lab7\baseline\visa_application.py", line 2, in parse_application
+    visa, entries = text.split(':')
+    ^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)

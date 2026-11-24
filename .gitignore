@@ -5,3 +5,5 @@ __pycache__/
 htmlcov/
 .venv/
 course_roster.txt
+.hypothesis/
+.pytest_tmp/
